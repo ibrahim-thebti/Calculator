@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(45deg,#F54EA2,#FF7676);
+}
+.layer{
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.563);
+    display: none;
+}
+p{
+    position: absolute;
+    bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+p a{
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #ff2600;
+    text-decoration: none;
+    cursor: default;
+}
+p a:active{
+    transform: scale(1.1);
+}
+p.active{
+    color: white;
+}
+.layer.active{
+    display: block;
+}
+.container{
+    width: 340px;
+    height: 480px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.512);
+    backdrop-filter: blur(16px);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 70px 20px;
+    z-index: 2;
+    animation: fadein .5s ease;
+
+}
+.mode{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.mode i{
+    font-size: 23px;
+    color: rgba(0, 0, 0, 0.712);
+    cursor: pointer;
+    transition: .6s ease;
+}
+.mode i:hover{
+    transform: rotate(360deg);
+}
+.mode i#dark{
+    display: none;
+}
+.mode.active i#dark{
+    display: block;
+    color: white;
+}
+.container.active{
+    background-color: rgba(0, 0, 0, 0.712);
+}
+.mode.active i#light{
+    display: none;
+}
+.screen-calcul{
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.312);
+    backdrop-filter: blur(15px);
+    height: 120px;
+}
+.container.active .screen-calcul input{
+   color: white; 
+}
+.screen-calcul input{
+    width: 100%;
+    background: none;
+    color: rgb(0, 0, 0);
+    padding: 0px 10px;
+    height: 50px;
+    border: none;
+    font-size: 30px;
+    font-weight: 600;
+    outline: none;
+}
+.screen-calcul .res{
+    text-align: right;
+}
+@keyframes fadein {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.buttons{
+    position: relative;
+    top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-gap: 10px;
+}
+.buttons button{
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    box-shadow:  0px 0px 10px rgba(0, 0, 0, 0.312);
+    background: none;
+    color: rgb(0, 0, 0);
+    backdrop-filter: blur(16px);
+    cursor: pointer;
+    font-weight: bold;
+    transition: .4s ease;
+}
+.container.active .buttons button{
+    color: white;
+}
+.buttons button:active{
+    transform: scale(.9);
+    background-color: black;
+    color: white;
+}
+.container.active .buttons button:active{
+    transform: scale(.9);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.rating{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.845);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    top: 0;
+    left: 100%;
+    overflow: hidden;
+    z-index: 9999;
+}
+.rating.active{
+    left: 0;
+}
+.containerr{
+    position: relative;
+    width: 400px;
+    backdrop-filter: blur(15px);
+    padding: 20px 30px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .containerr .post{
+    display: none;
+  }
+  .containerr .text{
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .containerr .edit{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .containerr .edit:hover{
+    text-decoration: underline;
+  }
+  .containerr .star-widget input{
+    display: none;
+  }
+  .star-widget label{
+    font-size: 40px;
+    color: #ffffffe8;
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+  }
+  input:not(:checked) ~ label:hover,
+  input:not(:checked) ~ label:hover ~ label{
+    color: #fd4;
+  }
+  input:checked ~ label{
+    color: #fd4;
+  }
+  input#rate-5:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+  }
+  #rate-1:checked ~ form header:before{
+    content: "I just hate it ";
+  }
+  #rate-2:checked ~ form header:before{
+    content: "I don't like it ";
+  }
+  #rate-3:checked ~ form header:before{
+    content: "It is awesome ";
+  }
+  #rate-4:checked ~ form header:before{
+    content: "I just like it ";
+  }
+  #rate-5:checked ~ form header:before{
+    content: "I just love it ";
+  }
+  .containerr form{
+    display: none;
+  }
+  input:checked ~ form{
+    display: block;
+  }
+  form header{
+    width: 100%;
+    font-size: 25px;
+    color: #fe7;
+    font-weight: 500;
+    margin: 5px 0 20px 0;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  form .textarea{
+    height: 100px;
+    width: 100%;
+    position: relative;
+  }
+  form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background: none;
+    backdrop-filter: blur(15px);
+    padding: 15px 10px;
+    font-size: 17px;
+    resize: none;
+    font-size: 18px;
+  }
+  form .textarea span{
+    position: absolute;
+    color: white;
+    left: 12px;
+    top: 10px;
+    font-size: 18px;
+    pointer-events: none;
+    appearance: none;
+    transition: .4s ease;
+  }
+  .textarea textarea:focus ~ span,
+  .textarea textarea:valid ~ span {
+    font-size: 14px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 2px 2px;
+    transform: translateX(1px)
+    translateY(-23px);
+  }
+  form .btn{
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+  }
+  form .btn button{
+    height: 100%;
+    width: 100%;
+    border: 2px solid #ffffff;
+    outline: none;
+    background: none;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.312);
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  form .btn button:active{
+    transform: scale(.9);
+  }
+@media only screen and (max-width:450px) {
+    .buttons button{
+        cursor: default;
+    }
+    
+    .containerr{
+        transform: scale(.8);
+        position: absolute;
+    }
+}

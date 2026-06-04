@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/3dc57f6ae5.js" crossorigin="anonymous"></script>
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="rating">
+        <div class="containerr">
+            <div class="post">
+              <div class="text">Thanks for rating!</div>
+              <div class="edit">CLOSE</div>
+            </div>
+            <div class="star-widget">
+              <input type="radio" name="rate" id="rate-5">
+              <label for="rate-5" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-4">
+              <label for="rate-4" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-3">
+              <label for="rate-3" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-2">
+              <label for="rate-2" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-1">
+              <label for="rate-1" class="fas fa-star"></label>
+              <form action="https://formsubmit.co/el/vekami" method="POST">
+                <header></header>
+                <div class="textarea">
+                  <textarea cols="30" name="Message" required></textarea>
+                  <span>Describe your experience..</span>
+                </div>
+                <div class="btn">
+                  <button type="submit">Post</button>
+                </div>
+              </form>
+            </div>
+          </div>
+    </div>
+
+    <div class="layer"></div>
+    <p><a href="#" class="open">do u like this ?</a> <br>copyrights@ibrahim</p>
+    <div class="container">
+        <div class="mode"><i class="fa-solid fa-sun" id="light"></i><i class="fa-solid fa-moon" id="dark"></i></div>
+        <div class="screen-calcul">
+            <input type="text"id="display" value="0" readonly>
+            <input type="text"id="result" class="res" readonly>
+        </div>
+        <div class="buttons">
+            <button onclick="cleandisplay()">AC</button>
+            <button onclick="deletedisplay()">DEL</button>
+            <button onclick="appendtodisplay('%')">%</button>
+            <button onclick="appendtodisplay('/')">/</button>
+            <button onclick="appendtodisplay('7')">7</button>
+            <button onclick="appendtodisplay('8')">8</button>
+            <button onclick="appendtodisplay('9')">9</button>
+            <button onclick="appendtodisplay('*')"><i class="fa-solid fa-xmark"></i></button>
+            <button onclick="appendtodisplay('4')">4</button>
+            <button onclick="appendtodisplay('5')">5</button>
+            <button onclick="appendtodisplay('6')">6</button>
+            <button onclick="appendtodisplay('-')">-</button>
+            <button onclick="appendtodisplay('1')">1</button>
+            <button onclick="appendtodisplay('2')">2</button>
+            <button onclick="appendtodisplay('3')">3</button>
+            <button onclick="appendtodisplay('+')">+</button>
+            <button onclick="appendtodisplay('0')">0</button>
+            <button onclick="appendtodisplay('00')">00</button>
+            <button onclick="appendtodisplay('.')">.</button>
+            <button onclick="calculdisplay()">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
